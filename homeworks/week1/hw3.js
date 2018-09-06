@@ -8,5 +8,3 @@ function reverse(str) {
 }
 
 reverse('yoyoyo') //oyoyoy
-reverse('1abc2') //2bca1
-reverse('1,2,3,2,1') //1,2,3,2,1
