@@ -5,7 +5,7 @@ function capitalize(str) {
 		if (i == 0) {
 			result = result + str[i].toUpperCase()
 		}
-		if (i > 0) {
+		else {
 			result = result + str[i]
 		}
 
