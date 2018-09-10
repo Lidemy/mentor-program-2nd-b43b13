@@ -24,22 +24,28 @@ function add(a, b) {
 			result.push(parseInt(arra[i]) + parseInt(arrb[i]))
 		}
 
-		//將相加完後做進位
-		for (var i = 0; i < arra .length; i++) {
-			result[i] = result[i]
-		 	if (result[i] >= 10) {
-				result[i] = result[i] % 10
-				result[i+1] = result[i+1] +1
+		//將相加完後做進位 (注意：當兩個數都數個位數時，不需要進位)
+		if(arra.length !== 1 || arrb.length !== 1) {
+			for (var i = 0; i < arra .length; i++) {
+			 	if (result[i] >= 10) {
+					result[i] = result[i] % 10
+					result[i+1] = result[i+1] +1
+				}				
 			}
+			//如果進位完，位數有增加
+			if(result.length > arra.length) {
+				result[result.length-1] = 1
+			}			
 		}
 
 		//相加完後反轉回來正確的位置
 		result = result.reverse()
 
 		//將正確的元素轉為字串
-		for (var i = 0; i < arra.length; i++) {
+		for (var i = 0; i < result.length; i++) {
 			answer += result[i]
 		}
+		
 		return answer
 	}
 }
