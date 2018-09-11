@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>hw2-1</title>
+</head>
+<style type="text/css">
+body, nav, ul, li, span, h1, h2, h3, h4, h6, div, header, img, a, div,p,button {
+	margin: 0;
+	padding: 0;
+}
+.nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 50px;
+	background: #343a40;
+}
+.nav__icon {
+	display: inline-block;
+	line-height: 50px;
+	color: white;
+	font-size: 20px;
+	margin-left: 10px;
+}
+.nav__link-area {
+	display: inline-block;
+	margin-left: 5px;
+}
+.nav__link-area a {
+	color: grey;
+	text-decoration: none;
+	margin-left: 15px;
+}
+.nav__link-area a:hover {
+	color: white;
+}
+.top {
+	margin-top: 50px;
+	width: 100%;
+	background: #e9ecef;
+	padding: 40px 0;
+}
+.top__content {
+	margin: 0 auto;
+	max-width: 960px;
+	padding: 0 20px;
+}
+.top__content-title  {
+	font-size: 72px;
+}
+.top__content-content {
+	margin: 10px 0 10px 0;
+}
+.top__content button {
+	width: 177px;
+	background: rgb(0, 123, 255);
+    border-radius: 4px;
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 17px 0;
+    transition: all 0.2s;
+}
+.top__content button:hover {
+	cursor: pointer;
+	background: #0069d9;
+}
+.down {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 0 20px 0 20px;
+}
+.down__articles {
+	margin-top: 50px;
+	margin-bottom: 30px;
+}
+.down__article {
+	display: inline-block;
+	width: 32%;
+	margin-bottom: 20px;
+}
+.down__article h3 {
+	font-size: 32px;
+	font-weight: normal;
+}
+.down__article p {
+	margin: 10px 0;
+}
+.down__article button {
+    background: rgb(108, 117, 125);
+    border: none;
+    border-radius: 4px;
+	font-size: 16px;
+    padding: 13px 10px;
+    color: white;
+    transition: background 0.3s;
+}
+.down__article button:hover {
+	cursor: pointer;
+	background: #555;
+}
+.footer {
+	padding: 20px 0;
+	padding-bottom: 0;
+	border-top: 1px solid #eee;
+	max-width: 960px;
+}
+@media only screen and (max-width: 747px) {
+.down__article {
+	width: 100%;
+}
+}
+	
+</style>
+<body>
+	<div class="nav">
+		<div class="nav__icon">Navbar</div>
+		<div class="nav__link-area">
+			<a href="#">Home</a>
+			<a href="#">Link</a>
+		</div>
+	</div>
+	<div class="top">
+		<div class="top__content">
+			<p class="top__content-title">Hello, world!</p>
+			<p class="top__content-content">This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+			<button>Learn more >></button>
+		</div>
+	</div>
+	<div class="down">
+		<div class="down__articles">
+			<div class="down__article">
+				<h3>Heading</h3>
+				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+				<button>View details >></button>
+			</div>
+			<div class="down__article">
+				<h3>Heading</h3>
+				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+				<button>View details >></button>
+			</div>
+			<div class="down__article">
+				<h3>Heading</h3>
+				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+				<button>View details >></button>
+			</div>
+		</div>
+		<div class="footer">© Company 2017-2018</div>	
+	</div>
+		
+	
+</body>
+</html>
