@@ -57,7 +57,8 @@ form {
 .form__question-title {
 	font-size: 20px;
 }
-.form__question input[type='text'] {
+.form__question input[type='text'], 
+.form__question input[type='email'] {
     width: 300px;
     border: none;
     border-bottom: 1px solid rgba(195, 192, 195, 0.59);
@@ -233,44 +234,73 @@ form {
 
 		document.querySelector('form').addEventListener('submit', e => {
 
+			//若其中有一個是空值就阻止submit
 			if(email.value == '' || nickname.value == '' || (!basic.checked && !pro.checked) || work.value == '' || coding.value == '' ) {
-
-
+		
 				if (email.value == '') {
 					email.parentNode.style.background='#ffebee'
 					email.style.borderBottom = '2px solid #ce2719'
+					remindEmail.innerText ='這是必填的問題'
 					remindEmail.classList.remove('hidden')
+				}else {  //再次交表單時若已填，恢復
+					email.parentNode.style.background='none'
+					email.style.borderBottom = '1px solid rgba(195, 192, 195, 0.59)'
+					remindEmail.classList.add('hidden')
 				}
+
 
 				if (nickname.value == '') {
 					nickname.parentNode.style.background='#ffebee'
 					nickname.style.borderBottom = '2px solid #ce2719'
 					remindName.classList.remove('hidden')
+				}else {  //再次交表單時若已填，恢復
+					nickname.parentNode.style.background='none'
+					nickname.style.borderBottom = '1px solid rgba(195, 192, 195, 0.59)'
+					remindName.classList.add('hidden')
 				}
+
 
 				if (!basic.checked && !pro.checked) {
 					basic.parentNode.parentNode.style.background='#ffebee'
 					remindType.classList.remove('hidden')
+				} else { //再次交表單時若已填，恢復
+					basic.parentNode.parentNode.style.background='none'
+					remindType.classList.add('hidden')
 				}
+
 
 				if (work.value == '') {
 					work.parentNode.style.background='#ffebee'
 					work.style.borderBottom = '2px solid #ce2719'
 					remindWork.classList.remove('hidden')
+				} else { //再次交表單時若已填，恢復
+					work.parentNode.style.background='none'
+					work.style.borderBottom = '1px solid rgba(195, 192, 195, 0.59)'
+					remindWork.classList.add('hidden')
 				}
+
 
 				if (coding.value == '') {
 					coding.parentNode.style.background='#ffebee'
 					coding.style.borderBottom = '2px solid #ce2719'
 					remindCode.classList.remove('hidden')
+				} else { //再次交表單時若已填，恢復
+					coding.parentNode.style.background='none'
+					coding.style.borderBottom = '1px solid rgba(195, 192, 195, 0.59)'
+					remindCode.classList.add('hidden')
 				}
 
 
 				//阻止默認submit
 				e.preventDefault();
+
+				//滾到上面
+				document.documentElement.scrollTop = 0
 				
 
-			} else {
+			} 
+
+			else {
 				console.log(email.name + ':' + email.value)
 				console.log(nickname.name + ':' + nickname.value)
 				console.log(basic.name + ':' + basic.value + basic.checked)
@@ -280,6 +310,7 @@ form {
 				console.log(others.name + ':' + others.value)
 				alert('submit!')
 			}
+			
 		})
 	})
 </script>
@@ -297,7 +328,7 @@ form {
 				<!-- Q1:email -->
 				<div class="form__question">
 					<div class="form__question-title">電子郵件地址<span class="star">＊</span></div>
-					<input type="text" placeholder="您的電子郵件" name="電子郵件地址" class="input-text" id="ansEmail">
+					<input type="email" placeholder="您的電子郵件" name="電子郵件地址" class="input-text" id="ansEmail">
 					<div class="remind remind-email hidden">這是必填的問題</div>
 				</div>
 				<!-- Q2:nickname -->
