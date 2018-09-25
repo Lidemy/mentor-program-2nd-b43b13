@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>week4-2</title>
+</head>
+<style type="text/css">
+
+body {
+	background: #eee;
+	margin: 0;
+	padding: 0;
+}
+.wrapper {
+	position: relative;
+}
+.top {
+    width: 100%;
+    height: 280px;
+    background: #ddd;
+    margin: 0;
+}
+form {
+    width: 640px;
+    background: white;
+    border-top: 8px solid black;
+    margin: 0 auto;
+    margin-top: -100px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+.form__title {
+	padding: 0 34px;
+	margin-top: 34px;
+	font-size: 33px;
+}
+.form__text {
+	margin-top: 20px;
+	padding: 0 34px;
+	font-size: 13px;
+}
+.form__text-must {
+	margin: 20px 0 0 0;
+	font-size: 13px;
+	color: #db4437;
+}
+.form__question-area {
+	padding: 0 17px;
+	margin-top: 20px;
+}
+.form__question {
+	margin-top: 2px;
+    padding: 25px 17px;
+}
+.form__question-must {
+	background: #ffebee;
+}
+.form__question-title {
+	font-size: 20px;
+}
+.form__question input[type='text'], 
+.form__question input[type='email'] {
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid rgba(195, 192, 195, 0.59);
+    background: none;
+    font-size: 16px;
+    margin-top: 22px;
+    outline: none;
+    padding-bottom: 3px;
+    transition: all 0.1s;
+}
+.form__question input::placeholder {
+    color: rgba(0,0,0,0.5);
+    opacity: 1; /* Firefox */
+}
+.form__question input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: rgba(0,0,0,0.5);
+}
+.form__question input::-ms-input-placeholder { /* Microsoft Edge */
+   color: rgba(0,0,0,0.5);
+}
+.form__question input:focus {
+	border-bottom: 1px solid #ce2719; 
+}
+.remind {
+	font-size: 16px;
+	color: #db4437;
+	margin-top: 13px;
+}
+.form__question .star {
+	position: relative;
+	top: -7px;
+	font-size: 15px;
+	color: #db4437;
+	font-weight: bold;
+}
+.form__question-subtitle {
+	font-size: 12px;
+	color: rgba(0,0,0.7);
+}
+.form__question input[type='radio'] {
+    width: 30px;
+    height: 32px;
+    margin: 0;
+}
+.form__question-radioarea {
+	margin-top: 20px;
+}
+.form__question-radioarea span {
+    display: inline-block;
+    width: 535px;
+}
+.hidden {
+	display: none;
+}
+.form__submit {
+	padding: 30px 0;
+}
+.form__submit p {
+    font-size: 12px;
+    color: rgba(0,0,0,0.5);
+    padding: 0 17px;
+}
+.form__submit-btn {
+    background: #4883ff;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    color: white;
+    padding: 8px 27px;
+    font-size: 16px;
+    margin-left: 17px;
+    transition: all 0.1s;
+}
+.form__submit-btn:hover {
+	background: #326de6;
+}
+.footer {
+    text-align: center;
+    margin-top: 34px;
+}
+.footer a {
+	text-decoration: none;
+    font-size: 12px;
+    color: rgba(0,0,0,0.7);
+}
+.footer-logo {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+    padding-bottom: 22px;
+}
+.footer-logo a {
+	text-decoration: none;
+	color: rgba(0,0,0,0.3);
+}
+.footer-logo img {
+	opacity: 0.2;
+	margin-right: 5px;
+}
+.footer-logo span {
+	position: relative;
+	top: -7px;
+}
+.tooltip {
+    position: absolute;
+    left: 15px;
+    bottom: 20px;
+    width: 20px;
+    height: 17px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 2px;
+    text-align: center;
+    color: white;
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 19px;
+    border-bottom-left-radius: 0;
+}
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 99%;
+    left: 0%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 5px 0 0px;
+    border-color: rgba(0,0,0,0.5) transparent transparent transparent;
+}
+.tooltip__text {
+    visibility: hidden;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    width: 100px;
+    font-size: 12px;
+    padding: 3px 9px;
+    border-radius: 3px;
+    position: relative;
+    left: 30px;
+    top: -22px;
+    transition: all 0.3s;
+}
+.tooltip a {
+	color: white;
+	text-decoration: none;
+}
+.tooltip:hover {
+	cursor: pointer;
+}
+.tooltip:hover .tooltip__text {
+	visibility: visible;
+	width: 100px;
+	transition-delay: 0.5s;
+}
+</style>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded',() => {
+
+		var email = document.getElementById('ansEmail')
+		var nickname = document.getElementById('ansNickname')
+		var basic = document.getElementById('ansType_basic')
+		var pro = document.getElementById('ansType_pro')
+		var work = document.getElementById('ansWork')
+		var coding = document.getElementById('ansCodingBg')
+		var others = document.getElementById('ansOthers')
+
+		var remindEmail = document.querySelector('.remind-email')
+		var remindName = document.querySelector('.remind-nickname')
+		var remindType = document.querySelector('.remind-type')
+		var remindWork = document.querySelector('.remind-work')
+		var remindCode = document.querySelector('.remind-code')
+
+
+		document.querySelector('form').addEventListener('submit', e => {
+
+			//若其中有一個是空值就阻止submit
+			if(email.value == '' || nickname.value == '' || (!basic.checked && !pro.checked) || work.value == '' || coding.value == '' ) {
+		
+				if (email.value == '') {
+					email.parentNode.style.background='#ffebee'
+					email.style.borderBottom = '2px solid #ce2719'
+					remindEmail.innerText ='這是必填的問題'
+					remindEmail.classList.remove('hidden')
+				}else {  //再次交表單時若已填，恢復
+					email.parentNode.style.background='none'
+					email.style.borderBottom = '1px solid rgba(195, 192, 195, 0.59)'
+					remindEmail.classList.add('hidden')
+				}
+
+
+				if (nickname.value == '') {
+					nickname.parentNode.style.background='#ffebee'
+					nickname.style.borderBottom = '2px solid #ce2719'
+					remindName.classList.remove('hidden')
+				}else {  //再次交表單時若已填，恢復
+					nickname.parentNode.style.background='none'
+					nickname.style.borderBottom = '1px solid rgba(195, 192, 195, 0.59)'
+					remindName.classList.add('hidden')
+				}
+
+
+				if (!basic.checked && !pro.checked) {
+					basic.parentNode.parentNode.style.background='#ffebee'
+					remindType.classList.remove('hidden')
+				} else { //再次交表單時若已填，恢復
+					basic.parentNode.parentNode.style.background='none'
+					remindType.classList.add('hidden')
+				}
+
+
+				if (work.value == '') {
+					work.parentNode.style.background='#ffebee'
+					work.style.borderBottom = '2px solid #ce2719'
+					remindWork.classList.remove('hidden')
+				} else { //再次交表單時若已填，恢復
+					work.parentNode.style.background='none'
+					work.style.borderBottom = '1px solid rgba(195, 192, 195, 0.59)'
+					remindWork.classList.add('hidden')
+				}
+
+
+				if (coding.value == '') {
+					coding.parentNode.style.background='#ffebee'
+					coding.style.borderBottom = '2px solid #ce2719'
+					remindCode.classList.remove('hidden')
+				} else { //再次交表單時若已填，恢復
+					coding.parentNode.style.background='none'
+					coding.style.borderBottom = '1px solid rgba(195, 192, 195, 0.59)'
+					remindCode.classList.add('hidden')
+				}
+
+
+				//阻止默認submit
+				e.preventDefault();
+
+				//滾到上面
+				document.documentElement.scrollTop = 0
+				
+
+			} 
+
+			else {
+				console.log(email.name + ':' + email.value)
+				console.log(nickname.name + ':' + nickname.value)
+				console.log(basic.name + ':' + basic.value + basic.checked)
+				console.log(pro.name + ':' + pro.value + pro.checked)
+				console.log(work.name + ':' + work.value)
+				console.log(coding.name + ':' + coding.value)
+				console.log(others.name + ':' + others.value)
+				alert('submit!')
+			}
+			
+		})
+	})
+</script>
+<body>
+	<div class="wrapper">
+		<div class="top"></div>
+		<form method="post">
+			<div class="form__title">程式導師實驗計畫第二期報名表單</div>
+			<div class="form__text">
+				<p>詳情請參考：<a href="https://medium.com/@hulitw/mentor-program-b5f96ae1eed1">https://medium.com/@hulitw/mentor-program-b5f96ae1eed1</a></p>
+				<p>填完之後請務必按照文章內的說明再寄信給我，才算報名成功喔</p>
+				<p class="form__text-must">*必填</p>
+			</div>
+			<div class="form__question-area">
+				<!-- Q1:email -->
+				<div class="form__question">
+					<div class="form__question-title">電子郵件地址<span class="star">＊</span></div>
+					<input type="email" placeholder="您的電子郵件" name="電子郵件地址" class="input-text" id="ansEmail">
+					<div class="remind remind-email hidden">這是必填的問題</div>
+				</div>
+				<!-- Q2:nickname -->
+				<div class="form__question">
+					<div class="form__question-title">暱稱<span class="star">＊</span></div>
+					<div class="form__question-subtitle">該如何稱呼你</div>
+					<input type="text" placeholder="您的回答" name="暱稱" class="input-text" id="ansNickname">
+					<div class="remind remind-nickname hidden">這是必填的問題</div>
+				</div>
+				<!-- Q3:SignUpType -->
+				<div class="form__question">
+					<div class="form__question-title">報名類型<span class="star">＊</span></div>
+					<div class="form__question-radioarea">
+						<input type="radio" id="ansType_basic" name="報名類型" value="基礎班">
+						<span>從零到一基礎班（一個月後開始收保證金 3000，淘汰不退還，結業後兩個月內找到工作付一個月半薪水，沒工作不用付）</span>
+					</div>
+					<div class="form__question-radioarea">
+						<input type="radio" id="ansType_pro" name="報名類型" value="工程師培養班">
+						<span>在職工程師加強班（一個月後開始收保證金 3000，兩個月時收學費 30000，被淘汰不退還）</span>
+					</div>
+					<div class="remind remind-type hidden">這是必填的問題</div>
+				</div>
+				<!-- Q4:Work -->
+				<div class="form__question">
+					<div class="form__question-title">現在的職業<span class="star">＊</span></div>
+					<div class="form__question-subtitle">範例：學生、前端工程師、待業中、業務</div>
+					<input type="text" placeholder="您的回答" name="現在的職業" class="input-text" id="ansWork">
+					<div class="remind remind-work hidden">這是必填的問題</div>
+				</div>
+				<!-- Q5:CodingBg -->
+				<div class="form__question">
+					<div class="form__question-title">是否有程式相關背景？<span class="star">＊</span></div>
+					<div class="form__question-subtitle">範例：無、高中時候學過C++、學過一點網頁前端、目前在資策會上課...</div>
+					<input type="text" placeholder="您的回答" class="input-text" name="是否有程式相關背景？" id="ansCodingBg">
+					<div class="remind remind-code hidden">這是必填的問題</div>
+				</div>
+
+				<!-- Q6:Others -->
+				<div class="form__question">
+					<div class="form__question-title">其他</div>
+					<div class="form__question-subtitle">任何你想說的</div>
+					<input type="text" placeholder="您的回答" name="其他" class="input-text" id="ansOthers">
+				</div>
+
+				<div class="form__submit">
+					<input type="submit" value="提交" class="form__submit-btn">
+					<p>請勿利用 Google 表單送出密碼。</p>
+				</div>
+			</div>
+		</form>
+		<div class="footer">
+			<a href="https://policies.google.com/terms?gl=US&hl=zh-TW">Google 並未認可或建立這項內容。 檢舉濫用情形 - 服務條款 - 其他條款</a>
+		</div>
+		<div class="footer-logo"><a href="https://www.google.com/forms/about/?utm_source=product&utm_medium=forms_logo&utm_campaign=forms" class="footer__logo"><img src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_dark_clr_74x24px.svg" alt="Google" height="24px" width="74px"><span>表單</span></a></div>
+		<div class="tooltip"><a href="href="https://policies.google.com/terms?gl=US&hl=zh-TW">!</a><div class="tooltip__text">向Google回報問題</div></div>		
+	</div>
+</body>
+</html>

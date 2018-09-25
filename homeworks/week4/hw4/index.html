@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>week4-4</title>
+</head>
+<script type="text/javascript">
+document.addEventListener('click', e => {
+
+	var element = q('.title')
+	
+	if(e.target.className == 'title')  {
+		element.hide() // 隱藏
+	} else {
+		element.show() // 顯示 
+	}
+	
+})
+
+function q(selector) {
+	return {
+
+		hide: ()=> document.querySelector(selector).style.visibility = 'hidden',
+		show: ()=> document.querySelector(selector).style.visibility = 'visible'
+
+	}
+}
+</script>
+<body>
+<button class="title">點我消失，再點一下顯示</button>
+	
+</body>
+</html>
