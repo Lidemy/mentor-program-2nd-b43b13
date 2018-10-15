@@ -206,7 +206,7 @@ input {
 	<?php
 		require_once('conn.php');
 
-		$sql = "SELECT comments.id,comments.content,comments.time,users.nickname FROM comments left join users on comments.user_id = users.id where parent_id=0 ORDER BY time DESC";
+		$sql = "SELECT abbie_comments.id, abbie_comments.content, abbie_comments.time,abbie_users.nickname FROM abbie_comments left join abbie_users on abbie_comments.user_id = abbie_users.id where parent_id=0 ORDER BY time DESC";
 
 		$result = $conn->query($sql);
 
@@ -223,7 +223,7 @@ input {
 
 				<!-- 撈子留言 -->
 				<?php
-					$sub_sql = "SELECT comments.*, users.nickname FROM comments left join users on users.id=comments.user_id  where parent_id='".$row['id']."' ORDER BY time ASC";
+					$sub_sql = "SELECT abbie_comments.*, abbie_users.nickname FROM abbie_comments left join abbie_users on abbie_users.id=abbie_comments.user_id  where parent_id='".$row['id']."' ORDER BY time ASC";
 					$sub_result = $conn->query($sub_sql);
 
 					if($sub_result->num_rows > 0) {

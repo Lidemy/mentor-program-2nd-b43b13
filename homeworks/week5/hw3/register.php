@@ -8,7 +8,7 @@
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 
-		$sql = "INSERT INTO users (nickname, username, password) VALUES ('$nickname' , '$username' , '$password')";
+		$sql = "INSERT INTO abbie_users (nickname, username, password) VALUES ('$nickname' , '$username' , '$password')";
 		
 		if( $row = $conn->query($sql) === TRUE ){
 			
@@ -69,7 +69,7 @@ input {
 	width: 50px;
 }
 .container {
-	margin-top: 210px;
+	margin-top: 60px;
 }
 .error {
     color: red;

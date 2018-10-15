@@ -2,7 +2,7 @@
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
-	$dbname = "abbie2";
+	$dbname = "mentor_program_db";
 
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	$conn->query("SET NAMES 'UTF8'");

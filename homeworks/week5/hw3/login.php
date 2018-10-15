@@ -7,7 +7,7 @@
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 
-		$sql = "SELECT * from users where username='$username' and password='$password'";
+		$sql = "SELECT * from abbie_users where username='$username' and password='$password'";
 		$result=$conn->query($sql);
 		$row = $result->fetch_assoc();
 			
@@ -68,7 +68,7 @@ input {
 	width: 50px;
 }
 .container {
-	margin-top: 210px;
+	margin-top: 60px;
 }
 .error {
 	color: red;
