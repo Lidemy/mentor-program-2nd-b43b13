@@ -1,0 +1,165 @@
+body {
+	background: #084f5f;
+}
+input,textarea {
+	outline: none;
+}
+.hidden {
+  display: none;
+}
+.wrapper {
+	width: 540px;
+	margin: 0 auto;
+	position: relative;
+}
+.comment_top {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 3px;
+}
+.title {
+  color: black;
+  font-size: 39px;
+  width: 50px;
+  height: 50px;
+  background: #f9d32d;
+  position: relative;
+  top: -12px;
+  border-radius: 5px;
+  margin-bottom: 4px;
+  margin-top: 4px;
+  text-align: center;
+  line-height: 44px;
+  font-weight: bold;
+}
+.form_content {
+  width: 494px;
+  height: 50px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+}
+.btn {
+  background: #2cbcda;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  width: 70px;
+  height: 30px;
+  font-size: 15px;
+  margin-top: 10px;
+}
+.comment {
+	width: 498px;
+  background: white;
+  padding: 20px;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+.form {
+	background: #fff;
+  width: 500px;
+  padding: 20px;
+  border-radius: 5px;
+}
+input {
+	display: block;
+}
+.nickname {
+  display: inline-block;
+  position: relative;
+  font-weight: bold;
+  font-size: 15px;
+}
+.time {
+  display: inline-block;
+  font-size: 11px;
+}
+.edit {
+  display: inline-block;
+  float: right;
+  font-size: 13px;
+}
+.edit button {
+  display: inline-block;
+  background: #52878c;
+  outline: none;
+  border: none;
+  border-radius: 24px;
+  padding: 1px 7px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 12px;
+}
+.sub_comment {
+	background: #eaf6f7;
+  margin-left: 21px;
+  padding: 10px;
+  margin-top: 9px;
+  border-radius: 5px;
+}
+.content {
+  font-size: 14px;
+  margin: 8px 0;
+}
+.sub_form {
+	margin-top: 10px;
+/*	display: none;*/
+}
+.sub_form textarea {
+	border: 1px solid #ddd;
+}
+.sub_form_content {
+  width: 450px;
+  height: 50px;
+  margin-top: 5px;
+}
+.register_btn {
+  border-radius: 3px;
+  color: white;
+  text-decoration: none;
+  background: #2cbcda;
+  padding: 2px 10px;
+  position: absolute;
+  right: 0;
+  top: 11px;
+}
+.login_btn {
+  border-radius: 3px;
+  color: white;
+  text-decoration: none;
+  background: #2cbcda;
+  padding: 2px 10px;
+  position: absolute;
+  right: 60px;
+  top: 11px;
+}
+.logout_btn {
+  border-radius: 3px;
+  color: white;
+  text-decoration: none;
+  background: #2cbcda;
+  padding: 2px 10px;
+  position: absolute;
+  right: 0;
+  top: 11px;
+}
+.login_nickname {
+	color: white;
+  position: absolute;
+  right: 0;
+  top: 13px;
+  right: 60px;
+}
+.ur_nickname {
+	color: #f9d32d;
+  margin: 0 5px;
+  font-weight: bold;
+}
+.cmmt_textarea {
+  width: 99%;
+  height: 50px;
+  margin-top: 6px;
+  border: 1px solid #ddd;
+}
+.sub_comment_sameperson {
+  background: #f7f7ea;
+}

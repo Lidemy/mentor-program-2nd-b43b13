@@ -1,7 +1,6 @@
 <?php
 	require('conn.php');
 
-	$nickname = $_POST['nickname'];
 	$content = $_POST['content'];
 	$parent_id = $_POST['parent_id'];
 	$user_id = $_COOKIE['user_id'];
